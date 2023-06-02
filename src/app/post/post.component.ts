@@ -9,36 +9,36 @@ import { Post } from './post.model.js';
 })
 export class PostComponent {
   @Input() post!: Post;
-  comment_appear:boolean
-  error_appear:boolean
+  comment:boolean
+  error:boolean
 
   constructor(){
-    this.comment_appear = false
-    this.error_appear = false
+    this.comment = false
+    this.error = false
   }
 
 
-  add_like(){
+  addLike(){
     this.post.add_like()
   }
 
-  comment_section_appear(){
+  commentAppear(){
 
   
-    this.error_appear = false
+    this.error = false
 
-    if (this.comment_appear){
-      this.comment_appear = false
+    if (this.comment){
+      this.comment = false
     }else{
-      this.comment_appear = true
+      this.comment = true
     }
   }
 
   add_comment(commento: HTMLTextAreaElement){
     if (commento.value == ''){
-      this.error_appear = true
+      this.error = true
     }else{
-      this.error_appear = false
+      this.error = false
       this.post.add_comment(commento.value)
       commento.value = ''
     }

@@ -5,16 +5,16 @@
     <h3>{{this.post.autore}}</h3>
     <p>{{this.post.testo}}</p>
     <div>
-        <button style="float: right;" class="btn bg-transparent" (click)="add_like()"><i class="fa fa-heart" style="font-size: 16px; color: red;"></i></button>
+        <button style="float: right;" class="btn bg-transparent" (click)="addLike()"><i class="fa fa-heart" style="font-size: 16px; color: red;"></i></button>
         <p style="float: right;">{{this.post.like}}</p>
-        <button style="float: right;" (click)="comment_section_appear()" class="btn bg-transparent">✚ commenta</button>
+        <button style="float: right;" (click)="commentAppear()" class="btn bg-transparent">✚ commenta</button>
     </div>
 
 
-    <br *ngIf="comment_appear">
-    <br *ngIf="comment_appear">
+    <br *ngIf="comment">
+    <br *ngIf="comment">
     
-    <div class="card" *ngIf="comment_appear">
+    <div class="card" *ngIf="comment">
         <div>
             <div *ngFor="let c of post.commenti" class="card m-2">
                 <p class="px-2 py-1 my-auto">{{c.testo}}</p>
@@ -25,8 +25,8 @@
             <label for="commento" style="color: rgb(110, 117, 124);">Scrivi un commento</label>
         </div>
         <button (click)="add_comment(addComment)" type="button" class="btn btn-primary m-2">Invia</button>
-        <p *ngIf="error_appear" class="text-center text-danger mt-2" style="font-weight: bold;">commento vuoto</p>
+        <p *ngIf="error" class="text-center text-danger mt-2" style="font-weight: bold;">commento vuoto</p>
     </div>
-    <br *ngIf="comment_appear == false">
+    <br *ngIf="comment== false">
     <hr>
 </div>

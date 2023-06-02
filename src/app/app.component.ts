@@ -10,9 +10,9 @@ export class AppComponent {
   title = 'facebook-site';
   posts: Post[]
 
-  error_appear: boolean
+  error: boolean
 
-  post_height: number;
+  postAlt: number;
 
   constructor(){
     this.posts = []
@@ -22,25 +22,25 @@ export class AppComponent {
       new Post('Marco', 'Ehi')
     ]
 
-    this.error_appear = false
-    this.post_height = 470
+    this.error = false
+    this.postAlt = 470
   }
-  sorted_posts(): Post[]{
+  sortPosts(): Post[]{
     return this.posts.sort((a: Post, b: Post) => (b.like - a.like))
   }
 
-  submit_add_post(autore: HTMLInputElement, testo: HTMLTextAreaElement) {
+  addPost(autore: HTMLInputElement, testo: HTMLTextAreaElement) {
     if (autore.value != '' && testo.value != ''){
-      this.post_height = 470
-      this.error_appear = false
+      this.postAlt = 470
+      this.error = false
 
 
       this.posts.push(new Post(autore.value, testo.value))
       autore.value = ''
       testo.value = ''
     }else{
-      this.error_appear = true
-      this.post_height = 510
+      this.error = true
+      this.postAlt = 510
 
     }
     

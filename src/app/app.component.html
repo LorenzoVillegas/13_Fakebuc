@@ -15,7 +15,7 @@
   <div class="container">
     <div class="row">
 
-      <div class="card col m-2 post-style" [style.height.px]="post_height">
+      <div class="card col m-2 post-style" [style.height.px]="postAlt">
         <h4 class="pt-2 text-center fs-4" style="color: white;">Add post</h4>
     
 
@@ -28,11 +28,11 @@
           <label for="testo" style="color: rgb(110, 117, 124);">Testo</label>
         </div>
     
-        <button type="button" (click)="submit_add_post(addAutore, addTesto)" class="btn btn-success">Send</button>
+        <button type="button" (click)="addPost(addAutore, addTesto)" class="btn btn-success">Send</button>
         <br>
       </div>
       <div class="col-9 float-end m-2">
-      <app-post *ngFor="let post of sorted_posts()" [post]="post"></app-post>
+      <app-post *ngFor="let post of sortPosts()" [post]="post"></app-post>
       </div>
     </div>
   </div>
