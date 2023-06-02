@@ -5,9 +5,9 @@
     <h3>{{this.post.autore}}</h3>
     <p>{{this.post.testo}}</p>
     <div>
-        <p style="float: left;">{{this.post.like}}</p>
-        <button style="float: left;" class="like-style" (click)="add_like()"><i class="fa fa-heart" style="font-size: 16px; color: red;"></i></button>
-        <button (click)="comment_section_appear()" class="comment-style">commenta</button>
+        <button style="float: right;" class="btn bg-transparent" (click)="add_like()"><i class="fa fa-heart" style="font-size: 16px; color: red;"></i></button>
+        <p style="float: right;">{{this.post.like}}</p>
+        <button style="float: right;" (click)="comment_section_appear()" class="btn bg-transparent">✚ commenta</button>
     </div>
 
 
